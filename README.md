@@ -1,29 +1,30 @@
-# Data Science Python Project 20
+# Data Science Python Project 20 — Hipotez Testleri (Z-Test, T-Test)
 
 ### Proje Kurulumu
 Projeyi öncelikle forklayın ve clone edin.
-Proje sayımız ilerledikçe proje yönetimimizi kolaylaştırmak adına projelerimizi belli klasör kalıplarında saklamak işimizi kolaylaştırmak adına iyi bir alışkanlıktır.
-Örnek bir Lokasyon: Code2Work/DataScience/data-project-2.
+Proje sayımız ilerledikçe proje yönetimimizi kolaylaştırmak adına projelerimizi belli klasör kalıplarında saklamak iyi bir alışkanlıktır.
+Örnek bir Lokasyon: Code2Work/DataScience/data-project-20.
 
 ### Proje Kurulumu Komutlar
-Aşağıdaki komutları sırayla çalıştırınız.
-* python -m venv venv
-* venv\Scripts\activate
-* pip install -r requirements.txt => Install all dependencies
-* python watch.py => Python run all tests
+Aşağıdaki komutları sırasıyla çalıştırınız.
+* `python -m venv venv`
+* `venv\Scripts\activate` (Windows) — macOS / Linux için: `source venv/bin/activate`
+* `pip install -r requirements.txt` => Tüm bağımlılıkları kurar
+* `python watch.py` => Tüm testleri çalıştırır
 
 ## Bonus
-* Eğer daha detaylı bir şekilde testlerin içerisine bakmak isterseniz
-* pytest .\tests\test_question.py -s -v 
+* Eğer daha detaylı bir şekilde testlerin içerisine bakmak isterseniz:
+* `pytest tests/test_question.py -s -v`
 
 ### Projeye Başlamadan Önce
-* Belirtilen sql querylerini yazabilmek için scripts klasörü altındaki bulunan init_db.py dosyası içerisindeki tüm queryleri 
-sırasıyla kendi local veritabanınızda çalıştırınız. 
-* Veritabanınızın hazır olduğundan emin olmak için tüm tablolara birer SELECT sorgusu atıp sonuçların doğru olduğundan emin olunuz.
-* Çalışırken sadece data klasörü altında bulunan questions.py dosyasında çalışacağız. Bunun klasör dışındaki kodları değiştirmeyiniz !
-* connect_db fonksiyonu içerisinde veritabanına bağlanma bilgileri var. Projenizi kendi localinizde test ederken burada bilgileri kendi local veritabanı bilgilerinizle değiştirerek test ediniz. Ancak kodunuzu <b>pushlarken bu veritabanı bilgilerini ilk bulduğunuz şekilde bırakınız.</b> Çünkü kodlarınız Cloud bir ortamda bu bilgilerle bir veritabanına bağlancaklardır.
+* Bu bir **Python** projesidir. Veritabanı kurulumuna, SQL sorgusuna ya da herhangi bir bağlantı ayarına **gerek yoktur**.
+* Çalışırken sadece `tasks/task_manager.py` dosyasında çalışacağız. Bu dosyanın dışındaki kodları değiştirmeyiniz!
+* Her fonksiyonun ne yapması gerektiği `tasks/task_manager.py` içindeki yorum satırlarında açıklanmıştır. Fonksiyonların içini doldurunuz.
+* Testleri çalıştırarak doğru sonuç alıp almadığınızı adım adım kontrol edebilirsiniz.
 
 # Questions
 * Senaryo:
-    Walter White, Jesse Pinkman ve diğer karakterlerin yer aldığı istatistiksel bir analiz projesi hazırlıyoruz. Elimizde çeşitli sahnelerdeki olay süreleri, öldürülen kişi sayıları, laboratuvar üretim kapasiteleri gibi sayısal veriler var. Bu verilerle karakterler veya sezonlar arasında anlamlı fark olup olmadığını test edeceğiz.
-* task_manager.py dosyasının içerisindeki fonksiyonların içerisini doldurmaya çalışın
+    Walter White, Jesse Pinkman ve diğer karakterlerin yer aldığı istatistiksel bir analiz projesi hazırlıyoruz.
+    Elimizde çeşitli sahnelerdeki olay süreleri, öldürülen kişi sayıları, laboratuvar üretim kapasiteleri gibi sayısal veriler var.
+    Bu verilerle karakterler veya sezonlar arasında anlamlı fark olup olmadığını test edeceğiz.
+* `tasks/task_manager.py` dosyasının içerisindeki fonksiyonların içerisini doldurmaya çalışın.
