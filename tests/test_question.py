@@ -8,6 +8,13 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from tasks.task_manager import *
 
+# ─────────────────────────────────────────────
+# Kaizu ID'n — Profile → Settings → User ID
+# Skorunun Kaizu'ya gitmesi için 0 yerine kendi ID'ni yaz.
+# ─────────────────────────────────────────────
+USER_ID = 0  # ← BURAYI DEĞİŞTİR
+
+
 def test_calculate_mean():
     assert calculate_mean([10, 20, 30]) == 20.0
 
@@ -69,9 +76,13 @@ def run_tests():
     user_score = (collector.passed / (collector.passed + collector.failed)) * 100
     print(round(user_score, 2))
     
+    if USER_ID == 0:
+        print("\n⚠️  USER_ID=0 — tests/test_question.py dosyasının başına kendi Kaizu ID'ni yazmadın, skor gönderilmeyecek.")
+        return
+
     url = "https://kaizu-api-8cd10af40cb3.herokuapp.com/projectLog"
     payload = {
-        "user_id": 34,
+        "user_id": USER_ID,
         "project_id": 668,
         "user_score": round(user_score, 2),
         "is_auto": False
